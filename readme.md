@@ -59,6 +59,11 @@ crontab -e
 
 #### Client Details
 - Client ID: 1
-Client Secret: Iu8sn6GOupdXhIaWGj0FrTo8qNjouEDTfIqAUjdW
+- Client Secret: Iu8sn6GOupdXhIaWGj0FrTo8qNjouEDTfIqAUjdW
 - Client ID: 2
-Client Secret: QPRQcSNbeBUPFm890RoXjOS1gVCLaCl7MZj7IaHN
+- Client Secret: QPRQcSNbeBUPFm890RoXjOS1gVCLaCl7MZj7IaHN
+
+
+#### Postman
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/2bf8e2f65290572996d8)

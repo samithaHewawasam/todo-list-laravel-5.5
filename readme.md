@@ -79,7 +79,7 @@ crontab -e
 - MAIL_PASSWORD=laravel@17
 - MAIL_ENCRYPTION=tls
 
-####### Email and the password is for mail server ( Gmail )
+##### Email and the password is for mail server ( Gmail )
 
 
 #### Postman

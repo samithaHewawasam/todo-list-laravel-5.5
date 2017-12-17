@@ -64,6 +64,24 @@ crontab -e
 - Client Secret: QPRQcSNbeBUPFm890RoXjOS1gVCLaCl7MZj7IaHN
 
 
+#### Env
+
+- DB_CONNECTION=mysql
+- DB_HOST=127.0.0.1
+- DB_PORT=3306
+- DB_DATABASE=todolist
+- DB_USERNAME=root
+- DB_PASSWORD=123456
+- MAIL_DRIVER=smtp
+- MAIL_HOST=smtp.gmail.com
+- MAIL_PORT=587
+- MAIL_USERNAME=todolistlaravel@gmail.com
+- MAIL_PASSWORD=laravel@17
+- MAIL_ENCRYPTION=tls
+
+####### Email and the password is for mail server ( Gmail )
+
+
 #### Postman
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/2bf8e2f65290572996d8)

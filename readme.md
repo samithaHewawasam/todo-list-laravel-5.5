@@ -3,19 +3,19 @@
 #### Features
 ---
 
-— A user can sign up and sign in to the platform.
-— The signed in user can be able to create, edit, view, complete and
+- A user can sign up and sign in to the platform.
+- The signed in user can be able to create, edit, view, complete and
 delete the todo list.
-— The app should be integrated to a another app and make sure the app
+- The app should be integrated to a another app and make sure the app
 will provide some API  Auth and API functionality.
 
-Used following in build features of framework.
+###### Used following in build features of framework.
 
-— Migrations (created appropriate migrations)
-— Events (an event class should be created and the event should be
+- Migrations (created appropriate migrations)
+- Events (an event class should be created and the event should be
 logged, when ever CRUD happens)
-— Notification (daily users should be notified renaming tasks)
-— API Protection using a middleware ( passport )
+- Notification (daily users should be notified renaming tasks)
+- API Protection using a middleware ( passport )
 
 ##### Commands used
 ---

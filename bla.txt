@@ -1,0 +1,500 @@
+   40  rm ~/.kube/config
+   41  kubectl get nodes
+   42  kubectl config set-cluster demo-cluster --server=http://192.168.1.4:8080
+   43  kubectl config set-context demo-system --cluster=demo-cluster
+   44  kubectl config use-context demo-system
+   45  kubectl get nodes
+   46   kubectl --kubeconfig ./admin.conf get pods --all-namespaces -o wide
+   47  gcloud container clusters get-credentials your-cluster --zone your-zone --project your-project
+   48  kubeadm init
+   49  cd Downloads/
+   50  ls
+   51  convert main-bg-m.jpg  -strip -quality 96% -define jpeg:extent=110KB main-bg-m.jpg
+   52  convert main-bg-m.jpg  -strip -quality 96% -define jpeg:extent=80KB main-bg-m.jpg
+   53  convert image2-768x160.jpg  -strip -quality 96% -define jpeg:extent=80KB image2-768x160.jpg
+   54  convert image2-768x160.jpg  -strip -quality 96% -define jpeg:extent=30KB image2-768x160.jpg
+   55  convert image3-256x299.jpg  -strip -quality 96% -define jpeg:extent=30KB image3-256x299.jpg
+   56  cd Documents
+   57  mkdir businessmagnet.co.uk
+   58  cd businessmagnet.co.uk/
+   59  ls
+   60  sudo npm install protractor
+   61  ls
+   62  protractor config.js
+   63  protractor config.js
+   64  sudo npm install protractor
+   65  sudo npm install -g protractor
+   66  protractor config.js
+   67  protractor config.js
+   68  protractor config.js
+   69  protractor config.js
+   70  protractor config.js
+   71  protractor config.js
+   72  protractor config.js
+   73  protractor config.js
+   74  protractor config.js
+   75  protractor config.js
+   76  protractor config.js
+   77  protractor config.js
+   78  protractor config.js
+   79  protractor config.js
+   80  protractor config.js
+   81  protractor config.js
+   82  protractor config.js
+   83  protractor config.js
+   84  protractor config.js
+   85  protractor config.js
+   86  protractor config.js
+   87  protractor config.js
+   88  protractor config.js
+   89  protractor config.js
+   90  protractor config.js
+   91  protractor config.js
+   92  protractor config.js
+   93  protractor config.js
+   94  protractor config.js
+   95  protractor config.js
+   96  clear
+   97  clear
+   98  protractor config.js
+   99  protractor config.js
+  100  protractor config.js
+  101  protractor config.js
+  102  protractor config.js
+  103  protractor config.js
+  104  protractor config.js
+  105  protractor config.js
+  106  protractor config.js
+  107  protractor config.js
+  108  protractor config.js
+  109  protractor config.js
+  110  protractor config.js
+  111  protractor config.js
+  112  protractor config.js
+  113  protractor config.js
+  114  protractor config.js
+  115  protractor config.js
+  116  protractor config.js
+  117  protractor config.js
+  118  protractor config.js
+  119  protractor config.js
+  120  protractor config.js
+  121  protractor config.js
+  122  protractor config.js
+  123  protractor config.js
+  124  protractor config.js
+  125  protractor config.js
+  126  protractor config.js
+  127  protractor config.js
+  128  protractor config.js
+  129  protractor config.js
+  130  protractor config.js
+  131  protractor config.js
+  132  protractor config.js
+  133  protractor config.js
+  134  protractor config.js
+  135  protractor config.js
+  136  protractor config.js
+  137  protractor config.js
+  138  protractor config.js
+  139  protractor config.js
+  140  protractor config.js
+  141  protractor config.js
+  142  protractor config.js
+  143  protractor config.js
+  144  protractor config.js
+  145  protractor config.js
+  146  protractor config.js
+  147  protractor config.js
+  148  protractor config.js
+  149  python
+  150  python email.py
+  151  pip install selenium
+  152  pip3 install selenium
+  153  sudo brew install pip
+  154  brew install pip
+  155  pip3 install selenium
+  156  pip install selenium
+  157  brew install python
+  158  pip install selenium
+  159  pip install -U pip
+  160  sudo easy_install pip
+  161  pip install selenium
+  162  sudo pip install selenium
+  163  sudo pip install selenium
+  164  sudo pip install selenium
+  165  pip install selenium
+  166  python email.py
+  167  python email.py
+  168  python email.py
+  169  python email.py
+  170  python email.py
+  171  python email.py
+  172  python email.py
+  173  python email.py
+  174  python email.py
+  175  python email.py
+  176  python email.py
+  177  pip install xlsxwriter
+  178  sudo pip install xlsxwriter
+  179  python email.py
+  180  python email.py
+  181  python email.py
+  182  python email.py
+  183  python email.py
+  184  python email.py
+  185  python email.py
+  186  python email.py
+  187  python email.py
+  188  python email.py
+  189  python email.py
+  190  python email.py
+  191  python email.py
+  192  python email.py
+  193  python email.py
+  194  python email.py
+  195  python email.py
+  196  python email.py
+  197  python email.py
+  198  python email.py
+  199  python email.py
+  200  python email.py
+  201  python email.py
+  202  python email.py
+  203  python email.py
+  204  python email.py
+  205  python --version
+  206  python --version
+  207  python email.py
+  208  python email.py
+  209  python email.py
+  210  python email.py
+  211  python email.py
+  212  python email.py
+  213  python email.py
+  214  python email.py
+  215  python emails.py
+  216  python emails.py
+  217  python emails.py
+  218  python emails.py
+  219  python emails.py
+  220  python emails.py
+  221  python emails.py
+  222  python emails.py
+  223  python emails.py
+  224  python emails.py
+  225  python emails.py
+  226  python emails.py
+  227  python emails.py
+  228  python emails.py
+  229  python emails.py
+  230  python emails.py
+  231  python emails.py
+  232  python emails.py
+  233  python emails.py
+  234  python emails.py
+  235  python emails.py
+  236  python emails.py
+  237  python emails.py
+  238  python emails.py
+  239  python emails.py
+  240  python emails.py
+  241  python emails.py
+  242  python emails.py
+  243  python emails.py
+  244  python emails.py
+  245  python emails.py
+  246  python emails.py
+  247  python emails.py
+  248  python emails.py
+  249  python emails.py
+  250  python emails.py
+  251  python emails.py
+  252  python emails.py
+  253  python emails.py
+  254  python emails.py
+  255  python emails.py
+  256  python emails.py
+  257  python emails.py
+  258  python emails.py
+  259  python emails.py
+  260  python emails.py
+  261  python emails.py
+  262  ls
+  263  ls
+  264  cd Documents/
+  265  ls
+  266  git clone git@github.com:samithaHewawasam/todo-list-laravel-5.5.git
+  267  ls
+  268  cd todo-list-laravel-5.5/
+  269  ls
+  270  composer global require "laravel/installer"
+  271  laravel new
+  272  composer create-project --prefer-dist laravel/laravel todo
+  273  cd Documents/businessmagnet.co.uk/
+  274  ls
+  275  python emails.py
+  276  python emails.py
+  277  mkdir fontawesome
+  278  ls
+  279  cd fontawesome/
+  280  ls
+  281  touch .npmrc 
+  282  nano .npmrc 
+  283  npm install --save @fortawesome/fontawesome-pro-solid
+  284  ls
+  285  cd node_modules/
+  286  ls
+  287  pwd
+  288  cd \@fortawesome/
+  289  ls
+  290  cd fontawesome-pro-solid/
+  291  ls
+  292  pwd
+  293  ls
+  294  cc ..
+  295  cd ..
+  296  ls
+  297  cd ..
+  298  ls
+  299  cd ..
+  300  ls
+  301  pwd
+  302  npm install --save @fortawesome/fontawesome-pro-regular
+  303  ls
+  304  cd node_modules/
+  305  ls
+  306  cd \@fortawesome/
+  307  ls
+  308  cd fontawesome-pro-
+  309  cd fontawesome-pro-regular/
+  310  ls
+  311  nano index.
+  312  nano index.js
+  313  cd ..
+  314  ls
+  315  cd ..
+  316  ls
+  317  cd ..
+  318  ls
+  319  npm i --save @fortawesome/fontawesome
+  320  ls
+  321  cd Documents
+  322  ls
+  323  cd businessmagnet.co.uk/
+  324  python getemails.py
+  325  python getemails.py
+  326  python getemails.py
+  327  php --version
+  328  php --version
+  329  export PATH=/usr/local/php5/bin:$PATH
+  330  php --version
+  331  cd Documents
+  332  ls
+  333  cd todolist/
+  334  ls
+  335  php artisan migrate
+  336  php artisan make:auth
+  337  php artisan serve
+  338  php artisan migrate
+  339  php artisan serve
+  340  composer require lavary/laravel-menu
+  341  php artisan vendor:publish --provider="Lavary\Menu\ServiceProvider"
+  342  php artisan make:middleware GenerateMenus
+  343  php artisan serve
+  344  composer update
+  345  php artisan vendor:unpublish --provider="Lavary\Menu\ServiceProvider"
+  346  php artisan vendor:publish --provider="Lavary\Menu\ServiceProvider"
+  347  php artisan serve
+  348  php artisan serve
+  349  php artisan migrate
+  350  php artisan migrate
+  351  php artisan make:migration create_tasks_table --create=tasks
+  352  php artisan migrate
+  353  php artisan make:migration create_tasks_table --create=tasks
+  354  php artisan migrate
+  355  php artisan make:migration create_tasks_table --create=tasks
+  356  php artisan migrate
+  357  php artisan make:migration create_tasks_table --create=tasks
+  358  composer dump-autoload
+  359  php artisan make:migration create_tasks_table --create=tasks
+  360  php artisan migrate
+  361  php artisan migrate
+  362  php artisan migrate:refresh
+  363  php artisan make:model Task
+  364  php artisan serve
+  365  php artisan serve
+  366  php artisan serve
+  367  php artisan serve
+  368  php artisan serve
+  369  php artisan serve
+  370  php artisan serve
+  371  php artisan serve
+  372  php artisan serve
+  373  php artisan serve
+  374  php artisan serve
+  375  php artisan serve
+  376  php artisan serve
+  377  php artisan serve
+  378  php artisan serve
+  379  php artisan serve
+  380  php artisan serve
+  381  php artisan serves
+  382  php artisan serve
+  383  php artisan serve
+  384  php artisan serve
+  385  php artisan serve
+  386  php artisan serve
+  387  php artisan serve
+  388  php artisan serve
+  389  php artisan serve
+  390  php artisan migrate
+  391  php artisan migrate:refresh
+  392  php artisan serve
+  393  php artisan migrate:refresh
+  394  php artisan migrate:refresh
+  395  php artisan serve
+  396  php artisan serve
+  397  php artisan serve
+  398  php artisan serve
+  399  php artisan serve
+  400  php artisan event:generate
+  401  php artisan serve
+  402  php artisan make:event CurdEvent
+  403  php artisan make:listener LoggingCurd --event="CurdEvent"
+  404  php artisan serve
+  405  php artisan serve
+  406  php artisan event:generate
+  407  php artisan serve
+  408  php artisan serve
+  409  php artisan serve debug
+  410  php artisan log
+  411  php artisan serve
+  412  php artisan make:notification RenamingTasks
+  413  php artisan serve
+  414  php artisan serve
+  415  php artisan config:cache
+  416  php artisan serve
+  417  php artisan config:cache
+  418  php artisan serve
+  419  php artisan notifications:table
+  420  php artisan migrate
+  421  php artisan config:cache
+  422  php artisan serve
+  423  php artisan make:resource Tasks
+  424  php artisan make:resource User
+  425  composer update
+  426  php artisan serve
+  427  composer update
+  428  composer update
+  429  php artisan --version
+  430  php --version
+  431  curl -s http://php-osx.liip.ch/install.sh | bash -s 7.0
+  432  php --version
+  433  php --version
+  434  nano  ~/.profile
+  435  php --version
+  436  export PATH=/usr/local/php5/bin:$PATH
+  437  php --version
+  438  composer update
+  439  cd ..
+  440  composer create-project --prefer-dist laravel/laravel blog dev-develop
+  441  composer create-project --prefer-dist laravel/laravel blog "v5.5.0"
+  442  composer create-project --prefer-dist laravel/laravel todolist "v5.5.0"
+  443  php --version
+  444  php artisian --version
+  445  php artisan --version
+  446  php artisan serve
+  447  composer update
+  448  cd todolist
+  449  php artisan --version
+  450  composer update
+  451  php artisan serve
+  452  php artisan migrate
+  453  php artisan migrate
+  454  php artisan migrate
+  455  php artisan cache:clear
+  456  php artisan migrate
+  457  php artisan migrate:refresh
+  458  php artisan migrate
+  459  php artisan migrate
+  460  php artisan migrate:refresh
+  461  php artisan cache:clear
+  462  php artisan migrate:refresh
+  463  php artisan migrate --force
+  464  php artisan migrate:reset
+  465  php artisan migrate
+  466  php artisan migrate
+  467  cd ..
+  468  rm -r todolist
+  469  composer create-project --prefer-dist laravel/laravel todolist "v5.5.0"
+  470  cd todolist
+  471  php artisan migrate
+  472  php artisan make:auth
+  473  php artisan serve
+  474  php artisan make:migration create_tasks_table --create=tasks
+  475  php artisan migrate
+  476  php artisan make:model Task
+  477  php artisan serve
+  478  php artisan make:notification RenamingTasks
+  479  php artisan notifications:table
+  480  php artisan migrate
+  481  php artisan serve
+  482  php artisan event:generate
+  483  php artisan serve
+  484  php artisan make:resource Task
+  485  composer require laravel/passport
+  486  php artisan migrate
+  487  php artisan passport:install
+  488  php artisan passport:keys
+  489  php artisan serve
+  490  php artisan route:list
+  491  php artisan serve
+  492  php artisan db:seed
+  493  php artisan serve
+  494  php artisan serve
+  495  php artisan serve
+  496  php artisan serve
+  497  php artisan serve
+  498  pwd
+  499  crontab -e
+  500  crontab -e
+  501  crontab -e
+  502  cd Documents
+  503  ls
+  504  cd todolist
+  505  ls
+  506  php artisan serve
+  507  php artisan serve
+  508  php artisan serve
+  509  php artisan serve
+  510  crontab -e
+  511  php artisan serve
+  512  crontab -e
+  513  crontab -e
+  514  php artisan serve
+  515  php artisan serve
+  516  php artisan serve
+  517  sudo a2dismod php5 && sudo a2enmod php5.6 && sudo service apache2 restart
+  518  sudo service apache2 restart
+  519  php --version
+  520  export PATH=/usr/local/php5/bin:$PATH
+  521  php artisan serve
+  522  php artisan serve
+  523  php artisan serve
+  524  php artisan inspire
+  525  php artisan list
+  526  php artisan list
+  527  php artisan serve
+  528  crontab -e
+  529  php artisan serve
+  530  crontab -e
+  531  php artisan serve
+  532  git init
+  533  git commit -m "app init"
+  534  git add --all
+  535  git commit -m "app init"
+  536  git remote add origin git@github.com:samithaHewawasam/todo-list-laravel-5.5.git
+  537  git push -u origin master
+  538  history
+  539  history > bla.txt

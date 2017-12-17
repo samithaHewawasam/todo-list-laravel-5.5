@@ -48,7 +48,7 @@ Route::post('/taskcreate', function (Request $request) {
     ]);
 
     if ($validator->fails()) {
-        return redirect('/')
+        return redirect('/tasklist')
             ->withInput()
             ->withErrors($validator);
     }
@@ -87,7 +87,7 @@ Route::post('/taskedit/{id}', function (Request $request) {
   ]);
 
   if ($validator->fails()) {
-      return redirect('/')
+      return redirect('/tasklist/'.$request->id)
           ->withInput()
           ->withErrors($validator);
   }

@@ -26,86 +26,22 @@ Route::get('/home', 'HomeController@index')->name('home');
 /**
  * Display All Tasks
  */
-Route::get('/tasklist', function () {
-
-    $id = \Auth::user()->id;
-    $user = \App\User::find($id);
-    $tasks = Task::orderBy('created_at', 'asc')->get();
-
-    return view('tasks',[
-        'tasks' => $tasks
-    ]);
-
-})->middleware('auth');
+Route::get('/tasklist', 'TaskController@tasklist')->middleware('auth');
 
 /**
  * Create a task
  */
 
-Route::post('/taskcreate', function (Request $request) {
-    $validator = Validator::make($request->all(), [
-        'name' => 'required|max:255',
-    ]);
-
-    if ($validator->fails()) {
-        return redirect('/tasklist')
-            ->withInput()
-            ->withErrors($validator);
-    }
-    $task = new Task;
-    $task->name = $request->name;
-    event(new CurdEvent($task, 'create'));
-    $task->save();
-    return redirect('/tasklist');
-
-})->middleware('auth');
+Route::post('/taskcreate', 'TaskController@taskcreate')->middleware('auth');
 
 /**
  * Delete a task
  */
 
-Route::delete('/tasklist/{id}', function ($id) {
+Route::delete('/tasklist/{id}', 'TaskController@deletetask')->middleware('auth');
 
-  $task = Task::find($id);
-  Task::findOrFail($id)->delete();
-  event(new CurdEvent($task, 'delete'));
-  return redirect('/tasklist');
+Route::get('/tasklist/{id}', 'TaskController@gettask')->middleware('auth');
 
-})->middleware('auth');
+Route::post('/taskedit/{id}', 'TaskController@taskedit')->middleware('auth');
 
-Route::get('/tasklist/{id}', function (Request $request) {
-
-  $task = Task::find($request->id);
-  return view('edit', ['task' => $task ]);
-
-})->middleware('auth');
-
-Route::post('/taskedit/{id}', function (Request $request) {
-
-  $validator = Validator::make($request->all(), [
-      'name' => 'required|max:255',
-  ]);
-
-  if ($validator->fails()) {
-      return redirect('/tasklist/'.$request->id)
-          ->withInput()
-          ->withErrors($validator);
-  }
-
-  $task = Task::find($request->id);
-  $task->name = $request->name;
-  event(new CurdEvent($task, 'edit'));
-  $task->save();
-  return redirect('/tasklist');
-
-})->middleware('auth');
-
-Route::get('/taskcomplete/{id}', function (Request $request) {
-
-  $task = Task::find($request->id);
-  $task->done = true;
-  event(new CurdEvent($task, 'complete'));
-  $task->save();
-  return redirect('/tasklist');
-
-})->middleware('auth');
+Route::get('/taskcomplete/{id}', 'TaskController@taskcomplete')->middleware('auth');

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Validator;
 use App\Task;
+use App\UsersTasks;
 use Illuminate\Http\Request;
 use App\Events\CurdEvent;
+use Illuminate\Support\Facades\DB;
 
 class TaskController extends Controller
 {
@@ -27,8 +29,12 @@ class TaskController extends Controller
     public function tasklist()
     {
       $id = \Auth::user()->id;
-      $user = \App\User::find($id);
-      $tasks = Task::orderBy('created_at', 'asc')->get();
+      $tasks = DB::table('tasks')
+                  ->join('users_tasks', 'tasks.id', '=', 'users_tasks.task_id')
+                  ->join('users', 'users.id', '=', 'users_tasks.user_id')
+                  ->where('users.id', '=', $id)
+                  ->select('tasks.*')
+                  ->get();
 
       return view('tasks',[
           'tasks' => $tasks
@@ -47,9 +53,19 @@ class TaskController extends Controller
               ->withErrors($validator);
       }
       $task = new Task;
+      $id = \Auth::user()->id;
+
+
+
       $task->name = $request->name;
-      event(new CurdEvent($task, 'create'));
       $task->save();
+
+      $users_tasks = new UsersTasks;
+      $users_tasks->user_id = $id;
+      $users_tasks->task_id = $task->id;
+      $users_tasks->save();
+
+      event(new CurdEvent($task, 'create'));
       return redirect('/tasklist');
     }
 

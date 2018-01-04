@@ -63,6 +63,12 @@ return [
             'queue' => 'default',
             'retry_after' => 90,
         ],
+        'rabbitmq' => [
+            'driver' => 'rabbitmq',
+            'connection' => 'default',
+            'queue' => 'default',
+            'retry_after' => 90,
+        ],
 
     ],
 

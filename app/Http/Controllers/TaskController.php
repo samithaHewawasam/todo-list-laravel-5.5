@@ -36,8 +36,11 @@ class TaskController extends Controller
                   ->select('tasks.*')
                   ->get();
 
+      $users = DB::table('users')->get();
+
       return view('tasks',[
-          'tasks' => $tasks
+          'tasks' => $tasks,
+          'users' => $users
       ]);
     }
 
@@ -112,4 +115,20 @@ class TaskController extends Controller
       $task->save();
       return redirect('/tasklist');
     }
+
+    public function taskassign(Request $request)
+    {
+
+      $users_tasks = UsersTasks::where('task_id', $request->id)
+                ->first();
+      $users_tasks->user_id = $request->user_id;
+
+      $task = Task::find($request->id);
+
+      event(new CurdEvent($task, 'assign'));
+      $users_tasks->save();
+      return redirect('/tasklist');
+    }
+
+
 }

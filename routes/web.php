@@ -45,3 +45,5 @@ Route::get('/tasklist/{id}', 'TaskController@gettask')->middleware('auth');
 Route::post('/taskedit/{id}', 'TaskController@taskedit')->middleware('auth');
 
 Route::get('/taskcomplete/{id}', 'TaskController@taskcomplete')->middleware('auth');
+
+Route::get('/taskassign/{id}', 'TaskController@taskassign')->middleware('auth');

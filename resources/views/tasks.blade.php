@@ -51,6 +51,7 @@
                                 <th>Delete</th>
                                 <th>Edit</th>
                                 <th>Complete</th>
+                                <th>Assign User</th>
                             </thead>
                             <tbody>
                                 @foreach ($tasks as $task)
@@ -91,6 +92,18 @@
                                           @elseif ($task->done)
                                           <i class="fa fa-btn fa-flag">Done</i>
                                           @endif
+                                        </td>
+                                        <td>
+                                        <form action="{{ url('taskassign/'.$task->id) }}" method="GET">
+                                          <select name="user_id">
+                                            @foreach ($users as $user)
+                                              <option value="{{$user->id}}">{{ $user->name }}</option>
+                                            @endforeach
+                                          </select>
+                                          <button type="submit" class="btn btn-success">
+                                              <i class="fa fa-btn fa-flag"></i>Assign
+                                          </button>
+                                        </form>
                                         </td>
                                     </tr>
 

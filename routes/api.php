@@ -24,6 +24,7 @@ Route::group(['middleware' => ['api', 'cors']], function () {
     Route::post('create_task', 'ApiTaskController@taskcreate');
     Route::post('delete_task', 'ApiTaskController@deletetask');
     Route::post('complete_task', 'ApiTaskController@taskcomplete');
+    Route::get('tasks_charts', 'ApiTaskController@taskscharts');
 
 
 /*

@@ -131,6 +131,15 @@ class ApiTaskController extends Controller
           'result' => $users_tasks->save()
       ]);
     }
+    public function taskscharts(Request $request)
+    {
 
+      $task = Task::taskscharts($this->user->id);
+
+      return response()->json([
+          'response' => 'success',
+          'result' => $task
+      ]);
+    }
 
 }

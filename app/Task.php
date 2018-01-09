@@ -27,6 +27,24 @@ class Task extends Model
 
   }
 
+  public static function taskscharts(int $user_id)
+  {
+
+      $tasks = DB::table('tasks')
+                  ->join('users_tasks', 'tasks.id', '=', 'users_tasks.task_id')
+                  ->join('users', 'users.id', '=', 'users_tasks.user_id')
+                  ->groupBy('users.id')
+                  ->groupBy('tasks.done')
+                  ->select(DB::raw('count(*) as status, users.name, tasks.done'))
+                  ->get();
+
+
+      return [
+          'tasks' => $tasks
+      ];
+
+  }
+
   public function create(int $user_id, String $name, $dueDate)
   {
 

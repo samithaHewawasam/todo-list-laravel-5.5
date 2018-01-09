@@ -11,7 +11,8 @@
         "laravel/passport": "^4.0",
         "laravel/tinker": "~1.0",
         "tymon/jwt-auth": "dev-develop",
-        "vladimir-yuldashev/laravel-queue-rabbitmq": "^6.0"
+        "vladimir-yuldashev/laravel-queue-rabbitmq": "^6.0",
+        "barryvdh/laravel-cors": "~0.11.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

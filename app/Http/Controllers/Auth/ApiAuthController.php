@@ -43,7 +43,24 @@ class ApiAuthController extends Controller
     }
 
     public function getAuthUser(Request $request){
-        $user = JWTAuth::toUser($request->token);
+        $token = JWTAuth::getToken();
+        $user = JWTAuth::toUser($token);
         return response()->json(['result' => $user]);
     }
+
+    public function profile_update(Request $request){
+
+        $token = JWTAuth::getToken();
+        $user = User::findOrFail(JWTAuth::toUser($token)->id);
+
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        if($request->get('password'))
+        $user->password = \Hash::make($request->get('password'));
+        $user->save();
+
+        return response()->json(['result' => $user]);
+    }
+
+
 }

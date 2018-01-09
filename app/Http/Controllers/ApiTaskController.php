@@ -8,17 +8,20 @@ use App\UsersTasks;
 use Illuminate\Http\Request;
 use App\Events\CurdEvent;
 use Illuminate\Support\Facades\DB;
+use JWTAuth;
+use JWTAuthException;
 
-class TaskController extends Controller
+class ApiTaskController extends Controller
 {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Request $request)
     {
-        $this->middleware('auth');
+        $token = JWTAuth::setToken($request->token);
+        $this->user = JWTAuth::toUser($token);
     }
 
     /**
@@ -26,48 +29,56 @@ class TaskController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function tasklist()
+    public function tasklist(Request $request)
     {
-      $id = \Auth::user()->id;
-      $task = new Task();
+      $task = new Task;
 
-      return view('tasks',
-        $task->list($id)
-      );
+      return response()->json([
+          'response' => 'success',
+          'result' => $task->list($this->user->id)
+      ]);
     }
 
     public function taskcreate(Request $request)
     {
+
       $validator = Validator::make($request->all(), [
           'name' => 'required|max:255',
       ]);
 
       if ($validator->fails()) {
-          return redirect('/tasklist')
-              ->withInput()
-              ->withErrors($validator);
+        return response()->json(['errors'=>$validator->errors()]);
       }
+
       $task = new Task;
-      $id = \Auth::user()->id;
-
-      $task->create($id, $request->name);
-
       event(new CurdEvent($task, 'create'));
-      return redirect('/tasklist');
+
+      return response()->json([
+          'response' => 'success',
+          'result' => $task->create($this->user->id, $request->name, $request->dueDate)
+      ]);
     }
 
-    public function deletetask($id)
+    public function deletetask(Request $request)
     {
-      $task = Task::find($id);
-      Task::findOrFail($id)->delete();
+      $task = Task::find($request->id);
+
+      if($task)
       event(new CurdEvent($task, 'delete'));
-      return redirect('/tasklist');
+
+      return response()->json([
+          'response' => 'success',
+          'result' => Task::findOrFail($request->id)->delete()
+      ]);
     }
 
     public function gettask(Request $request)
     {
       $task = Task::find($request->id);
-      return view('edit', ['task' => $task ]);
+      return response()->json([
+          'response' => 'success',
+          'result' => ['task' => $task ]
+      ]);
     }
 
     public function taskedit(Request $request)
@@ -78,16 +89,17 @@ class TaskController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('/tasklist/'.$request->id)
-                ->withInput()
-                ->withErrors($validator);
+          return response()->json(['errors'=>$validator->errors()]);
         }
 
         $task = Task::find($request->id);
         $task->name = $request->name;
         event(new CurdEvent($task, 'edit'));
-        $task->save();
-        return redirect('/tasklist');
+
+        return response()->json([
+            'response' => 'success',
+            'result' => $task->save()
+        ]);
     }
 
     public function taskcomplete(Request $request)
@@ -97,7 +109,10 @@ class TaskController extends Controller
       $task->done = true;
       event(new CurdEvent($task, 'complete'));
       $task->save();
-      return redirect('/tasklist');
+      return response()->json([
+          'response' => 'success',
+          'result' => $task->save()
+      ]);
     }
 
     public function taskassign(Request $request)
@@ -110,8 +125,11 @@ class TaskController extends Controller
       $task = Task::find($request->id);
 
       event(new CurdEvent($task, 'assign'));
-      $users_tasks->save();
-      return redirect('/tasklist');
+
+      return response()->json([
+          'response' => 'success',
+          'result' => $users_tasks->save()
+      ]);
     }
 
 

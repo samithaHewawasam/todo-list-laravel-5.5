@@ -15,14 +15,22 @@ use App\Events\CurdEvent;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::group(['middleware' => ['api']], function () {
-    Route::post('auth/register', 'Auth\RegisterController@create');
+Route::group(['middleware' => ['api', 'cors']], function () {
+    Route::post('auth/register', 'UserController@register');
     Route::post('auth/login', 'Auth\ApiAuthController@login');
-});
+    Route::get('auth/user', 'Auth\ApiAuthController@getAuthUser');
+    Route::post('auth/profile', 'Auth\ApiAuthController@profile_update');
+    Route::get('tasks', 'ApiTaskController@tasklist');
+    Route::post('create_task', 'ApiTaskController@taskcreate');
+    Route::post('delete_task', 'ApiTaskController@deletetask');
+    Route::post('complete_task', 'ApiTaskController@taskcomplete');
 
+
+/*
 Route::middleware('jwt.auth')->get('/tasks', function (Request $request) {
     return new TaskResource(Task::all());
 });
+*/
 
 Route::middleware('jwt.auth')->get('/remaining_tasks', function (Request $request) {
     return new TaskResource(Task::where('done', false)->get());
@@ -32,6 +40,7 @@ Route::middleware('jwt.auth')->get('/complete_tasks', function (Request $request
     return new TaskResource(Task::where('done', true)->get());
 });
 
+/*
 Route::middleware('jwt.auth')->post('/create_task', function (Request $request) {
     $validator = Validator::make($request->all(), [
         'name' => 'required|max:255',
@@ -47,7 +56,7 @@ Route::middleware('jwt.auth')->post('/create_task', function (Request $request) 
     $task->save();
     return new TaskResource($task);
 });
-
+*/
 
 Route::middleware('jwt.auth')->post('/edit_task', function (Request $request) {
     $validator = Validator::make($request->all(), [
@@ -71,6 +80,7 @@ Route::middleware('jwt.auth')->post('/edit_task', function (Request $request) {
     return new TaskResource($task);
 });
 
+/*
 Route::middleware('jwt.auth')->post('/complete_task', function (Request $request) {
     $validator = Validator::make($request->all(), [
         'id' => 'required|max:255',
@@ -92,7 +102,9 @@ Route::middleware('jwt.auth')->post('/complete_task', function (Request $request
     $task->save();
     return new TaskResource($task);
 });
+*/
 
+/*
 Route::middleware('jwt.auth')->post('/delete_task', function (Request $request) {
 
     $task = Task::find($request->id);
@@ -105,4 +117,6 @@ Route::middleware('jwt.auth')->post('/delete_task', function (Request $request) 
     Task::findOrFail($request->id)->delete();
     event(new CurdEvent($task, 'delete'));
     return new TaskResource($task);
+});
+*/
 });

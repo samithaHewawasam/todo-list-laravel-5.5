@@ -35,6 +35,7 @@ class Task extends Model
                   ->join('users', 'users.id', '=', 'users_tasks.user_id')
                   ->groupBy('users.id')
                   ->groupBy('tasks.done')
+                  ->groupBy('users.name')
                   ->select(DB::raw('count(*) as status, users.name, tasks.done'))
                   ->get();
 

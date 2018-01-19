@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use JWTAuth;
 use App\User;
+use Database\UsersTaskSeeder;
 use JWTAuthException;
 class UserController extends Controller
 {
@@ -20,6 +21,10 @@ class UserController extends Controller
           'email' => $request->get('email'),
           'password' => bcrypt($request->get('password'))
         ]);
+
+        $seeder = new UsersTaskSeeder();
+        $seeder->run($user->id);
+
         return response()->json(['status'=>true,'message'=>'User created successfully','data'=>$user]);
     }
 
